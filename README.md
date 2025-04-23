@@ -1,5 +1,4 @@
 ## EX. NO: 1(A) : IMPLEMENTATION OF CAESAR CIPHER
- 
 
 ## AIM:
 
@@ -13,8 +12,6 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 ## EXAMPLE:
 
-
-
 ![image](https://github.com/Hemamanigandan/CNS/assets/149653568/eb9c6c43-8c80-4cdd-b9d4-91705a311c79)
 
 
@@ -27,8 +24,64 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-5: Display the cipher text obtained above.
 
 
-PROGRAM :-
+## PROGRAM :
 
+DEVELOPED BY : AMRUTHAVARSHINI GOPAL
 
+REGISTER NO : 212223230013
+```
+#include <stdio.h> 
+#include <string.h> 
+ 
+#include <ctype.h> 
+void main() 
+ 
+{ 
+    char plain[10],cipher[10]; 
+    int key,i,length; 
+    int result; 
+    printf("\n Enter the plain text:"); 
+    scanf("%s", plain); 
+    printf("\n Enter the key value:"); 
+    scanf("%d", &key); 
+    printf("\n \n \t PLAIN TEXt: %s", plain); 
+    printf("\n \n \t ENCRYPTED TEXT:"); 
+    for(i=0, length = strlen(plain); i<length; i++) 
+    { 
+         
+        cipher[i]=plain[i] + key; 
+        if (isupper(plain[i]) && (cipher[i] > 'Z')) 
+        cipher[i] = cipher[i] - 26; 
+        if (islower(plain[i]) && (cipher[i] > 'z')) 
+        cipher[i] = cipher[i] - 26; 
+        printf("%c", cipher[i]); 
+ 
+    } 
+    printf("\n \n \t AFTER DECRYPTION : "); 
+    for(i=0;i<length;i++) 
+    { 
+         
+        plain[i]=cipher[i]-key; 
+        if(isupper(cipher[i])&&(plain[i]<'A')) 
+        plain[i]=plain[i]+26; 
+        if(islower(cipher[i])&&(plain[i]<'a')) 
+        plain[i]=plain[i]+26; 
+        printf("%c",plain[i]); 
+    }    
+}
+```
 
-OUTPUT :-
+## OUTPUT :
+
+Simulating Caesar Cipher
+![Screenshot 2025-03-19 083907](https://github.com/user-attachments/assets/ada99f0b-8bb6-46d2-ad28-74b8f5d4b372)
+
+Input : amrutha
+
+Encrypted Message : cotwvjc
+
+Decrypted Message : amrutha
+
+## RESULT:
+
+The program is executed successfully.
